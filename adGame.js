@@ -46,7 +46,7 @@ function preload(){
 //amount of images to match yours by changing 2 to whatever.
 //your images should be named adsOne0.png, adsOne1.png, etc
     for (let i = 0; i<9; i++){
-    allAds[i] = loadImage("adsOne" + i + ".png");
+    allAds[i] = loadImage("images/adsOne" + i + ".png");
 
   }
     
