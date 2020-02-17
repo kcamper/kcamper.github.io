@@ -12,8 +12,8 @@ let classifier;
 let flippedVideo;
 
 let caption = "you know what kind of plan never fails? no plan at all.";
-let rich = "if I had all this money, I'd be nice too!"
-let ironed = "it all gets ironed out..."
+let rich;
+let ironed;
 let label = "...waiting";
 let warning = "watch out";
 
@@ -62,7 +62,7 @@ function setup() {
     tracker.init();
     tracker.start(capture.elt);
 
-    parasiteQuestion = createP("are you a parasite?");
+    parasiteQuestion = createP("parasite?");
     parasiteQuestion.position(20, 1);
     parasiteButton = createButton("yes");
     parasiteButton.position(20, 50);
@@ -87,17 +87,20 @@ function gotResults(error, results){
 
 
 function yesMousePressed(){
-    textSize(20);
-    textAlign(CENTER, CENTER);
-    fill(255);
-    text(rich, width/2, height - 16);
+    iron = createP("it all gets ironed out...")
+    iron.position(width/2.5, 5);
+    parasiteQuestion.hide();
+    parasiteButton.hide();
+    notParasiteButton.hide();
+    
 }
 
 function noMousePressed(){
-    textSize(20);
-    textAlign(CENTER, CENTER);
-    fill(255);
-    text(ironed, width/2, height - 100);
+    rich = createP("if I had all this money, I'd be nice too!");
+    rich.position(width/3.5, 5);
+    parasiteQuestion.hide();
+    parasiteButton.hide();
+    notParasiteButton.hide();
 }
 
 function draw() {
@@ -142,17 +145,18 @@ function draw() {
     textAlign(CENTER, CENTER);
     fill(255);
 
-    
-    
-      if(label == "empty frame"){
+
+    if(label == "empty frame"){
        text(caption, width/2, height - 16);
-        
+       parasiteButton.mousePressed(yesMousePressed);
+       notParasiteButton.mousePressed(noMousePressed);
     }
     
     if(label == "person in frame"){
         text(warning, width/2, height - 16);
         parasiteButton.mousePressed(yesMousePressed);
-        notParasiteButton.mousePressed(noMousePressed)
+        notParasiteButton.mousePressed(noMousePressed);
+        
     }
     
     
