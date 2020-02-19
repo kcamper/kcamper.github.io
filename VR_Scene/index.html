@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- main a-frame library -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+
+    <!-- physics library -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+    <!-- particle system library -->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+    <!-- environment library -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <!-- text geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+    <!-- extras library -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene physics>
+        
+        <!-- ASSETS -->
+        <a-assents>
+            <img id="skyTexture" src="images/starmap.jpg">
+            <img id="io" src="images/io.jpg">
+            <video id="city" autoplay loop="true" src="video/city.mp4"></video>
+            <video id="mountain" autoplay loop="true" src="video/mountain.mp4"></video>
+            <img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+           <img id="city-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
+            <a-asset-item id="tower-obj" src="models/model.obj"></a-asset-item>
+            <a-asset-item id="tower-mtl" src="models/materials.mtl"></a-asset-item>
+            <a-asset-item id="tower-gltf" src="models/model.gltf"></a-asset-item>
+        </a-assents>
+        <!-- ASSETS end -->
+        
+        
+        <!-- SHAPE Entities -->
+
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="1000" height="10" color="#7BC8A4"></a-plane>
+        <!-- SHAPE Entity end -->
+        
+        
+        <!-- TEXT -->
+<!--        <a-text value="Move Forward" color="#111" position="2 2.5 -5" align="center"></a-text>-->
+        
+        <!-- TEXT end -->
+        
+        
+        <!-- Environment // SKY -->
+<a-sky color="#b5a7b6"></a-sky>
+        
+
+        
+<!--        <a-videosphere src="#city"></a-videosphere>-->
+<!--        <a-entity environment="preset: japan"></a-entity>-->
+        <a-entity position="-10 .25 -10" particle-system="color: #f6c2c2,#90d2d8"
+                  accelerationValue=".01" velocityValue=".1" type="3"></a-entity>
+        <a-entity position="10 .25 1" particle-system="color: #90d2d8,#f6c2c2"
+                  accelerationValue=".01" velocityValue=".1" blending="3" type="2"></a-entity>
+        
+        <!-- SKY end -->
+        
+        
+        <!-- VIDEO -->
+<!--        <a-video src="#mountain" width="16" height="9" position="0 4.5 -10"></a-video>-->
+        <!-- VIDEO end -->
+        
+        
+       
+        
+        </a-scene>
+  </body>
+</html>
