@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- main a-frame library -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+
+    <!-- physics library -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+    <!-- particle system library -->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+    <!-- environment library -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <!-- text geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+    <!-- extras library -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene physics>
+        <!-- ASSETS -->
+      <a-assets>
+        <a-asset-item id="city-gltf" src="models/citymodel.gltf"></a-asset-item>
+        <a-asset-item id="city-obj" src="models/citymodel.obj"></a-asset-item>
+        <a-asset-item id="city-mtl" src="models/citymaterials.mtl"></a-asset-item>
+          
+        <a-asset-item id="dratini-gltf" src="models/dratiniModel.gltf"></a-asset-item>
+        <a-asset-item id="dratini-obj" src="models/dratiniModel.obj"></a-asset-item>
+        <a-asset-item id="dratini-mtl" src="models/dratiniMaterials.mtl"></a-asset-item>  
+        <img id="sky" src="images/starmap.jpg">  
+          <!-- asset from danny bittman -->
+          
+        <video id="vr_background" autoplay loop="true" src="video/VR_Background.mp4"></video>  
+      </a-assets>
+
+        
+        
+        <!-- ENTITIES -->
+
+      <a-entity environment="preset: dream; skyType: 'atmosphere'; skyColor: #1E7582"></a-entity>
+<!--
+      <a-videosphere src="#vr_background"></a-videosphere>
+      <a-videosphere src="video/VR_Background.mp4"></a-videosphere>
+-->
+      <a-ring color="teal" radius-inner="1" radius-outer="2"></a-ring>    
+      <a-sky src="#sky"></a-sky>
+      <a-entity dynamic-body
+                geometry = "primitive: sphere;"
+                scale = "1 1 1"
+                material = "color: teal"
+                animation= "property:rotation;
+                            to: 0 360 0;
+                            dur: 15000;
+                            easing: linear;
+                            loop:true;"></a-entity>    
+      <a-entity obj-model="obj:#city-obj; mtl:#city-mtl"
+                position="0 0 0 "
+                rotation="0 0 0 "
+                scale="1 1 1"></a-entity>
+      <a-entity id="city" gltf-model="city-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity> 
+      <a-entity obj-model="obj:#dratini-obj; mtl:#dratini-mtl"
+                position="0 0 0 "
+                rotation="0 0 0 "
+                scale="1 1 1"></a-entity>
+      <a-entity id="city" gltf-model="dratini-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity>     
+<!--      <a-entity position="0 2.24 -15" particle-system="color:#000"></a-entity> -->
+        
+              <!-- Red directional light shining from the top left. -->
+        <a-light color="red" position="-11 4 0"></a-light>
+
+        <!-- Blue point light, 5 meters in the air. -->
+        <a-light type="point" color="blue" position="0 5 0"></a-light>    
+        
+        
+        
+      </a-scene>
+  </body>
+</html>
+
