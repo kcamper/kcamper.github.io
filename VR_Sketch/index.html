@@ -19,6 +19,10 @@
 
     <!-- extras library -->
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+      
+    <!-- teleport library -->  
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+      
   </head>
   <body>
     <a-scene loading-screen="dotsColor: teal; backgroundColor: black" physics>
@@ -61,7 +65,15 @@
         
         
         <!-- ENTITIES -->
+       <a-entity id="cameraRig">
 
+      <a-entity id="head" camera="active: true" look-controls wasd-controls position="1 3.6 0"></a-entity>
+      <a-entity oculus-touch-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity oculus-touch-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity vive-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity vive-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+
+       </a-entity>
       
 <!--
       <a-videosphere src="#vr_background"></a-videosphere>
