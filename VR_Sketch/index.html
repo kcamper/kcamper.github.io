@@ -21,33 +21,58 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
-    <a-scene physics>
+    <a-scene loading-screen="dotsColor: teal; backgroundColor: black" physics>
         <!-- ASSETS -->
       <a-assets>
+         
         <a-asset-item id="city-gltf" src="models/citymodel.gltf"></a-asset-item>
         <a-asset-item id="city-obj" src="models/citymodel.obj"></a-asset-item>
         <a-asset-item id="city-mtl" src="models/citymaterials.mtl"></a-asset-item>
-          
+        
+           <!-- asset from danny bittman -->
+        
         <a-asset-item id="dratini-gltf" src="models/dratiniModel.gltf"></a-asset-item>
         <a-asset-item id="dratini-obj" src="models/dratiniModel.obj"></a-asset-item>
         <a-asset-item id="dratini-mtl" src="models/dratiniMaterials.mtl"></a-asset-item>  
-        <img id="sky" src="images/starmap.jpg">  
-          <!-- asset from danny bittman -->
           
-        <video id="vr_background" autoplay loop="true" src="video/VR_Background.mp4"></video>  
+        <a-asset-item id="jigglypuff-gltf" src="models/jigglypuffmodel.gltf"></a-asset-item>
+        <a-asset-item id="jigglypuff-obj" src="models/jigglypuffmodel.obj"></a-asset-item>
+        <a-asset-item id="jigglypuff-mtl" src="models/jigglypuffmaterials.mtl"></a-asset-item> 
+          
+        <a-asset-item id="mew-gltf" src="models/mewmodel.gltf"></a-asset-item>
+        <a-asset-item id="mew-obj" src="models/mewmodel.obj"></a-asset-item>
+        <a-asset-item id="mew-mtl" src="models/mewmaterials.mtl"></a-asset-item> 
+          
+        <a-asset-item id="poliwag-gltf" src="models/poliwagmodel.gltf"></a-asset-item>
+        <a-asset-item id="poliwag-obj" src="models/poliwagmodel.obj"></a-asset-item>
+        <a-asset-item id="poliwag-mtl" src="models/poliwagmaterials.mtl"></a-asset-item> 
+          
+        <a-asset-item id="bulbasaur-gltf" src="models/bulbasaurmodel.gltf"></a-asset-item>
+        <a-asset-item id="bulbasaur-obj" src="models/bulbasaurmodel.obj"></a-asset-item>
+        <a-asset-item id="bulbasaur-mtl" src="models/bulbasaurmaterials.mtl"></a-asset-item>   
+        <!-- assets from tipatat chennavasin -->
+          
+        <img id="sky" src="images/starmap.jpg">  
+          
+          
+        <video id="vr_background" autoplay loop="true" src="video/mountain.mp4"></video>  
       </a-assets>
 
         
         
         <!-- ENTITIES -->
 
-      <a-entity environment="preset: dream; skyType: 'atmosphere'; skyColor: #1E7582"></a-entity>
+      
 <!--
       <a-videosphere src="#vr_background"></a-videosphere>
       <a-videosphere src="video/VR_Background.mp4"></a-videosphere>
 -->
       <a-ring color="teal" radius-inner="1" radius-outer="2"></a-ring>    
       <a-sky src="#sky"></a-sky>
+      <a-video src="#vr_background" width="25" height="19" position="0 0 -20"></a-video> 
+        <a-video src="#vr_background" width="25" height="19" position="20 0 -20"></a-video>
+        <a-video src="#vr_background" width="25" height="19" position="-20 0 -20"></a-video> 
+        
       <a-entity dynamic-body
                 geometry = "primitive: sphere;"
                 scale = "1 1 1"
@@ -65,18 +90,95 @@
                 position="0 0 0"
                 rotation="0 0 0"
                 scale="1 1 1"></a-entity> 
+    
+        
       <a-entity obj-model="obj:#dratini-obj; mtl:#dratini-mtl"
-                position="0 0 0 "
-                rotation="0 0 0 "
+                position="6 1 1 "
+                rotation="0 0 70 " animation="property: rotation; to: 360 360 0; loop: true; dur: 10000"
                 scale="1 1 1"></a-entity>
-      <a-entity id="city" gltf-model="dratini-gltf"
+      <a-entity id="dratini" gltf-model="dratini-gltf"
                 position="0 0 0"
                 rotation="0 0 0"
-                scale="1 1 1"></a-entity>     
-<!--      <a-entity position="0 2.24 -15" particle-system="color:#000"></a-entity> -->
+                scale="1 1 1"></a-entity>
+        
+      <a-entity obj-model="obj:#dratini-obj; mtl:#dratini-mtl"
+                position="1 1 1 "
+                rotation="0 0 70 " animation="property: rotation; to: 360 0 0; loop: true; dur: 10000"
+                scale="1 1 1"></a-entity>
+      <a-entity id="dratini" gltf-model="dratini-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity>    
+        
+      <a-entity obj-model="obj:#mew-obj; mtl:#mew-mtl"
+                position="3 2 1 "
+                rotation="5 0 7 "
+                animation="property: rotation; to: 100 360 360; loop: true; dur: 10000"
+                scale="1 1 1"></a-entity>
+      <a-entity id="mew" gltf-model="mew-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity>    
+      <a-entity position="0 2.24 -15" particle-system="color:#000"></a-entity>
+        
+      <a-entity obj-model="obj:#mew-obj; mtl:#mew-mtl"
+                position="1 1 4 "
+                rotation="5 0 7 "
+                animation="property: rotation; to: 100 360 360; loop: true; dur: 10000"
+                scale="1 1 1"></a-entity>
+      <a-entity id="mew" gltf-model="mew-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity>    
+      <a-entity position="0 2.24 -15" particle-system="color:#000"></a-entity>    
+        
+      <a-entity obj-model="obj:#poliwag-obj; mtl:#poliwag-mtl"
+                position="3 0 1 "
+                rotation="5 0 7 "
+                animation="property: rotation; to: 100 360 0; loop: true; dur: 10000"
+                scale="1 1 1"></a-entity>
+      <a-entity id="mew" gltf-model="poliwag-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity>    
+      <a-entity position="0 2.24 -15" particle-system="color:#000"></a-entity>
+        
+       <a-entity obj-model="obj:#bulbasaur-obj; mtl:#bulbasaur-mtl"
+                position="3 2 4 "
+                rotation="5 0 7 "
+                animation="property: rotation; to: 100 360 0; loop: true; dur: 10000"
+                scale="1 1 1"></a-entity>
+      <a-entity id="mew" gltf-model="bulbasaur-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity>    
+      <a-entity position="0 2.24 -15" particle-system="color:#000"></a-entity> 
+        
+      <a-entity obj-model="obj:#bulbasaur-obj; mtl:#bulbasaur-mtl"
+                position="10 1 4 "
+                rotation="5 0 7 "
+                animation="property: rotation; to: 100 360 0; loop: true; dur: 10000"
+                scale="1 1 1"></a-entity>
+      <a-entity id="mew" gltf-model="bulbasaur-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity>    
+      <a-entity position="0 2.24 -15" particle-system="color:#000"></a-entity> 
+        
+      <a-entity obj-model="obj:#bulbasaur-obj; mtl:#bulbasaur-mtl"
+                position="0 1 10 "
+                rotation="5 0 7 "
+                animation="property: rotation; to: 100 360 0; loop: true; dur: 10000"
+                scale="1 1 1"></a-entity>
+      <a-entity id="mew" gltf-model="bulbasaur-gltf"
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"></a-entity>    
+      <a-entity position="0 2.24 -15" particle-system="color:#000"></a-entity>     
         
               <!-- Red directional light shining from the top left. -->
         <a-light color="red" position="-11 4 0"></a-light>
+        <a-light color="white" position="-12 10 13"></a-light>
 
         <!-- Blue point light, 5 meters in the air. -->
         <a-light type="point" color="blue" position="0 5 0"></a-light>    
