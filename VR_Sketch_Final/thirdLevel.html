@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- main a-frame library -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+
+    <!-- physics library -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+    <!-- particle system library -->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+    <!-- environment library -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <!-- text geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+    <!-- extras library -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+      
+    <!-- teleport library -->  
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+      
+     <!-- geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>   
+    <script src="link-controls.js"></script>
+      
+  </head>
+  <body>
+    <a-scene loading-screen="dotsColor: teal; backgroundColor: black" physics>
+        <!-- ASSETS -->
+      <a-assets>
+          
+        <img id="sky" src="images/starmap.jpg">      
+        <video id="vr_background" autoplay loop="true" src="video/mountain.mp4"></video> 
+          
+        
+       <!-- Level Three Assets -->    
+<!--
+        <video id="levelThreeAds1" src="video/levelThreeAds1.mp4"></video>  
+        <video id="levelThreeAds2" src="video/levelThreeAds2.mp4"></video>  
+        <video id="levelThreeAds3" src="video/levelThreeAds3.mp4"></video>  
+        <video id="levelThreeAds4" src="video/levelThreeAds4.mp4"></video> 
+        <video id="levelThreeAds5" src="video/levelThreeAds5.mp4"></video> 
+        <video id="levelThreeAds6" src="video/levelThreeAds6.mp4"></video>
+        <video id="levelThreeAds7" src="video/levelThreeAds7.mp4"></video> 
+        <video id="levelThreeAds8" src="video/levelThreeAds8.mp4"></video> 
+        <video id="levelThreeAds9" src="video/levelThreeAds9.mp4"></video>
+        <video id="levelThreeReal" src="video/unsponsoredVideo.mp4"></video>    
+          
+          
+-->
+      </a-assets>
+
+        
+           
+        
+   
+      
+<!--
+      <a-videosphere src="#vr_background"></a-videosphere>
+      <a-videosphere src="video/VR_Background.mp4"></a-videosphere>
+-->
+         
+      <a-sky src="#sky"></a-sky>
+      <a-video src="#levelThreeAds1" position="-.38 .77 -.9"></a-video>
+        <a-entity data-brackets-id="871" text-geometry="value: Congrats! You won!; font: https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json" position="-2.25 2.02 -1.18"></a-entity> 
+        <a-entity position="0 2.25 -15" particle-system="color:#000, #FFF;duration:NaN"></a-entity>
+        <a-entity camera="" wasd-controls="" position="0 1.6 0" rotation="-7.792226013779197 -0.9167324722093172 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
+        <a-entity position="0 2.25 -15" particle-system="color:#03e3fc, #fcad03;duration:NaN"></a-entity>
+
+              <!-- Red directional light shining from the top left. -->
+        <a-light color="red" position="-11 4 0"></a-light>
+        <a-light color="white" position="-12 10 13"></a-light>
+
+        <!-- Blue point light, 5 meters in the air. -->
+        <a-light type="point" color="blue" position="0 5 0"></a-light>    
+        
+             <!-- ENTITIES -->
+       <a-entity id="cameraRig">
+
+      <a-entity id="head" camera="active: true" look-controls wasd-controls position="1 3.6 0"></a-entity>
+      <a-entity oculus-touch-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity oculus-touch-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity vive-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity vive-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+
+       </a-entity>
+        
+      </a-scene>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- main a-frame library -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+
+    <!-- physics library -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+    <!-- particle system library -->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+    <!-- environment library -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <!-- text geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+    <!-- extras library -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+      
+    <!-- teleport library -->  
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+      
+    <!-- geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>   
+    <script src="link-controls.js"></script>
+      
+  </head>
+  <body>
+    <a-scene loading-screen="dotsColor: teal; backgroundColor: black" physics raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" >
+        <!-- ASSETS -->
+      <a-assets>
+          
+        <img id="sky" src="images/starmap.jpg">      
+        <video id="vr_background" autoplay loop="true" src="video/mountain.mp4"></video> 
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+          
+        <!-- Level One Assets -->  
+        <img id="levelOnead1" src="images/levelOneAds1.png">
+        <img id="levelOnead2" src="images/levelOneAds2.png">
+        <img id="levelOnead3" src="images/levelOneAds3.png">
+        <img id="levelOnead4" src="images/levelOneAds4.png">
+        <img id="levelOnead5" src="images/levelOneAds5.png">
+        <img id="levelOnead6" src="images/levelOneAds6.png">
+        <img id="levelOnead7" src="images/levelOneAds7.png">
+        <img id="levelOnead8" src="images/levelOneAds8.png">
+        <img id="levelOnead9" src="images/levelOneAds9.png">
+        <img id="levelOnead10" src="images/levelOneAds10.png">
+        <img id="levelOnead11" src="images/levelOneAds11.png">
+        <img id="levelOnead12" src="images/levelOneAds12.png">
+        <img id="levelOnead13" src="images/levelOneAds13.png">
+        <img id="levelOnead14" src="images/levelOneAds14.png">
+        <img id="levelOnead15" src="images/levelOneAds15.png">
+        <img id="levelOnead16" src="images/levelOneAds16.png"> 
+        <img id="levelOnead17" src="images/levelOneAds17.png">
+        <img id="levelOnead18" src="images/levelOneAds18.png">
+        <img id="levelOnead19" src="images/levelOneAds19.png">
+        <img id="levelOnead20" src="images/levelOneAds20.png">
+        <img id="levelOnead21" src="images/levelOneAds21.png">
+        <img id="levelOnead22" src="images/levelOneAds22.png">  
+        <img id="levelOneReal" src="images/levelOneRealMessage.png">
+        <img id="FacebookBackground" src="images/FacebookBackground.png">   
+        
+        
+          
+       <!-- Level Two Assets --> 
+        <img id="levelTwoad1" src="images/levelTwoAds1.jpg">  
+        <img id="levelTwoad2" src="images/levelTwoAds2.PNG"> 
+        <img id="levelTwoad3" src="images/levelTwoAds3.jpg">
+        <img id="levelTwoad4" src="images/levelTwoAds4.jpg"> 
+        <img id="levelTwoad5" src="images/levelTwoAds5.jpg"> 
+        <img id="levelTwoad6" src="images/levelTwoAds6.jpg"> 
+        <img id="levelTwoad7" src="images/levelTwoAds7.jpg"> 
+        <img id="levelTwoad8" src="images/levelTwoAds8.jpg"> 
+        <img id="levelTwoad9" src="images/levelTwoAds9.jpg">
+        <img id="levelTwoad10" src="images/levelTwoAds10.jpg"> 
+        <img id="levelTwoad11" src="images/levelTwoAds11.jpg">
+        <img id="levelTwoad12" src="images/levelTwoAds12.jpg"> 
+        <img id="levelTwoad13" src="images/levelTwoAds13.jpg"> 
+        <img id="levelTwoad14" src="images/levelTwoAds14.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds15.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds16.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds17.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds18.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds19.jpg">
+        <img id="levelTwoReal" src="images/levelTwoRealAd.jpg"> 
+          
+        <a-entity link="href: thirdLevel.html; title:My Home; image: #levelTwoReal"></a-entity>
+          
+       <!-- Level Three Assets -->    
+        <video id="levelThreeAds1" src="video/levelThreeAds1.mp4"></video>  
+        <video id="levelThreeAds2" src="video/levelThreeAds2.mp4"></video>  
+        <video id="levelThreeAds3" src="video/levelThreeAds3.mp4"></video>  
+        <video id="levelThreeAds4" src="video/levelThreeAds4.mp4"></video> 
+        <video id="levelThreeAds5" src="video/levelThreeAds5.mp4"></video> 
+        <video id="levelThreeAds6" src="video/levelThreeAds6.mp4"></video>
+        <video id="levelThreeAds7" src="video/levelThreeAds7.mp4"></video> 
+        <video id="levelThreeAds8" src="video/levelThreeAds8.mp4"></video> 
+        <video id="levelThreeAds9" src="video/levelThreeAds9.mp4"></video>
+        <video id="levelThreeReal" src="video/unsponsoredVideo.mp4"></video>    
+          
+          
+      </a-assets>
+
+        
+           
+        
+   
+      
+<!--
+      <a-videosphere src="#vr_background"></a-videosphere>
+      <a-videosphere src="video/VR_Background.mp4"></a-videosphere>
+-->
+         
+      <a-sky src="#FacebookBackground"></a-sky>
+      <a-box src="#levelOnead1" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+      <a-plane src="#levelOnead1" height="10" width="5" rotation="-90 0 0"></a-plane>
+      <a-plane src="#levelOnead2" height="10" width="5" rotation="-90 0 0" position="2 10 0"></a-plane>    
+      <a-image src="#levelOnead3"></a-image>
+      <a-image src="#levelOnead4"></a-image>
+      <a-image src="#levelOnead5"></a-image>
+      <a-image src="#levelOnead6"></a-image>
+      <a-image src="#levelOnead7"></a-image>
+      <a-image src="#levelOnead8"></a-image>
+      <a-image src="#levelOnead9"></a-image>
+      <a-image src="#levelOnead10"></a-image>
+      <a-image src="#levelOnead11"></a-image>
+      <a-image src="#levelOnead12"></a-image>
+      <a-image src="#levelOnead13"></a-image>
+      <a-image src="#levelOnead14"></a-image>
+      <a-image src="#levelOnead15"></a-image> 
+      <a-image src="#levelOnead16"></a-image>
+      <a-image src="#levelOnead17"></a-image>
+      <a-image src="#levelOnead18"></a-image> 
+      <a-image src="#levelOneReal"></a-image>     
+    
+        
+      <a-plane src="#levelOnead2" height="10" width="5" rotation="0 -6.22 0" position="2 3.45 -2.8" material="" geometry="" scale="1 0.63 1"></a-plane>    
+      
+      <a-plane src="#levelOnead1" height="10" width="5" rotation="-90 0 0" material="" geometry="" position="-4.98 0 0"></a-plane>
+      <a-plane src="#levelOnead2" height="10" width="5" rotation="0 -6.22 0" position="2 3.45 -2.8" material="" geometry="" scale="1 0.63 1"></a-plane>
+      <a-plane data-brackets-id="336" src="#levelOnead1" height="10" width="5" rotation="-90 0 0" material="" geometry="" position="-7.75 0 0"></a-plane> 
+      <a-plane data-brackets-id="338" src="#levelOnead2" height="10" width="5" rotation="-90 -6.79 0" position="-6.76 0.92 -2.8" material="" geometry="" scale="1 0.63 1"></a-plane>    
+      <a-plane data-brackets-id="87" src="#levelOnead2" height="10" width="5" rotation="0 -6.22 0" position="-2.84 3.45 -2.8" material="" geometry="" scale="1 0.63 1"></a-plane>    
+      <a-image src="#levelOnead3" material="" geometry="" position="-1.99 0.22 0" scale="2.14 1.77 1.69"></a-image>
+      <a-image src="#levelOnead4" material="" geometry="" position="-0.42 0.51 2.23"></a-image>
+      <a-image src="#levelOnead5" material="" geometry="" position="-0.79 1.54 -0.45" scale="1.41 1 1"></a-image>
+      <a-image src="#levelOnead6" material="" geometry="" position="1.55 0.86 -1.04" rotation="0 0.53 0.25" scale="1 1 1.77"></a-image>
+      <a-image src="#levelOnead7" material="" geometry="" position="1.28 1.29 1.92" rotation="0 0 0.6"></a-image>
+      <a-image src="#levelOnead8" material="" geometry="" position="0.88 1.39 4.35"></a-image>
+      <a-image src="#levelOnead9" material="" geometry="" position="0 2.31 6.27"></a-image>
+      <a-image src="#levelOnead10" material="" geometry="" position="0 1.04 0"></a-image>
+      <a-image src="#levelOnead11" material="" geometry="" position="-2.16 0.65 4.43"></a-image>
+      <a-image src="#levelOnead12" material="" geometry="" position="-2.78 0.68 -1.69"></a-image>
+      <a-image src="#levelOnead13" material="" geometry="" position="-1.84 0.45 2.18"></a-image>
+      <a-image src="#levelOnead14" material="" geometry="" position="2.74 0.66 0"></a-image>
+      <a-image src="#levelOnead15" material="" geometry="" position="2.14 0.83 2.64"></a-image>
+      <a-image src="#levelOnead16" material="" geometry="" position="2.55 1.05 4.33"></a-image>
+      <a-image src="#levelOnead17" material="" geometry="" position="-4.75 0.5 0"></a-image>
+      <a-image src="#levelOnead18" material="" geometry="" position="-0.32 0.34 0"></a-image> 
+      <a-image src="#levelOnead12" material="" geometry="" position="-3.4 0.8 3.27"></a-image>    
+      <a-box data-brackets-id="977" src="#levelOnead1" position="2.53 3.8 -1.03" rotation="0 45 45" scale="2 2 2" material="" geometry=""></a-box>
+      <a-image data-brackets-id="97" src="#levelOnead9" material="" geometry="" position="2.69465 1.35165 8.06179"></a-image>
+      <!--<a-image data-brackets-id="585" src="#levelOneReal" material="" geometry="" position="0.75 0.47 3.58" link="href: secondLevel.html"> 
+</a-image> -->
+      <a-box data-brackets-id="1259" src="#levelOnead1" position="-6.73 4.02786 -1.03" rotation="20 20 20" scale="2 2 2" material="" geometry=""></a-box> 
+      <a-entity data-brackets-id="871" text-geometry="value: Find the real message from your mom; font: https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json" position="-6.25 2.02 -1.18"></a-entity>  
+     
+      <a-link link="href: secondLevel.html" image= "#levelOneReal"  position="0.75 0.47 3.58" visualAspectEnabled="false"></a-link> 
+         <a-image src="#levelOneReal" material="" geometry="" position="0.75 0.47 3.58" scale="2.14 1.77 1.69"></a-image>
+<!--
+      <a-video src="#vr_background" width="25" height="19" position="0 0 -20"></a-video> 
+        <a-video src="#vr_background" width="25" height="19" position="20 0 -20"></a-video>
+        <a-video src="#vr_background" width="25" height="19" position="-20 0 -20"></a-video> 
+        
+-->
+    
+
+
+              <!-- Red directional light shining from the top left. -->
+        <a-light color="white" position="-11 4 0"></a-light>
+        <a-light color="white" position="-12 10 13"></a-light>
+
+        <!-- Blue point light, 5 meters in the air. -->
+        <a-light type="point" color="white" position="0 5 0"></a-light>    
+        
+             <!-- ENTITIES -->
+       <a-entity id="cameraRig">
+
+      <a-entity id="head" camera="active: true" look-controls wasd-controls position="1 3.6 0"></a-entity>
+      <a-entity oculus-touch-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity oculus-touch-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity vive-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity vive-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+
+       </a-entity>
+        
+      </a-scene>
+  </body>
+</html>
+
