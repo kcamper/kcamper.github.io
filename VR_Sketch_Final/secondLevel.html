@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- main a-frame library -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+
+    <!-- physics library -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+    <!-- particle system library -->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+    <!-- environment library -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <!-- text geometry library -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+    <!-- extras library -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+      
+    <!-- teleport library -->  
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+      
+  </head>
+  <body>
+    <a-scene loading-screen="dotsColor: teal; backgroundColor: black" physics>
+        <!-- ASSETS -->
+      <a-assets>
+          
+        <img id="sky" src="images/starmap.jpg">      
+        <video id="vr_background" autoplay loop="true" src="video/mountain.mp4"></video> 
+          
+       
+        <a-entity link="href: secondLevel.html; title:My Home; image: #levelOneReal"></a-entity>
+          
+       <!-- Level Two Assets --> 
+        <img id="levelTwoad1" src="images/levelTwoAds1.jpg">  
+        <img id="levelTwoad2" src="images/levelTwoAds2.PNG"> 
+        <img id="levelTwoad3" src="images/levelTwoAds3.jpg">
+        <img id="levelTwoad4" src="images/levelTwoAds4.jpg"> 
+        <img id="levelTwoad5" src="images/levelTwoAds5.jpg"> 
+        <img id="levelTwoad6" src="images/levelTwoAds6.jpg"> 
+        <img id="levelTwoad7" src="images/levelTwoAds7.jpg"> 
+        <img id="levelTwoad8" src="images/levelTwoAds8.jpg"> 
+        <img id="levelTwoad9" src="images/levelTwoAds9.jpg">
+        <img id="levelTwoad10" src="images/levelTwoAds10.jpg"> 
+        <img id="levelTwoad11" src="images/levelTwoAds11.jpg">
+        <img id="levelTwoad12" src="images/levelTwoAds12.jpg"> 
+        <img id="levelTwoad13" src="images/levelTwoAds13.jpg"> 
+        <img id="levelTwoad14" src="images/levelTwoAds14.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds15.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds16.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds17.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds18.jpg">
+        <img id="levelTwoad15" src="images/levelTwoAds19.jpg">
+        <img id="levelTwoReal" src="images/levelTwoRealAd.jpg"> 
+          
+        <a-entity link="href: thirdLevel.html; title:My Home; image: #levelTwoReal"></a-entity>
+      
+          
+      </a-assets>
+
+        
+           
+        
+   
+      
+<!--
+      <a-videosphere src="#vr_background"></a-videosphere>
+      <a-videosphere src="video/VR_Background.mp4"></a-videosphere>
+-->
+ <a-sky src="#sky"></a-sky>
+    
+<!--
+      <a-video src="#vr_background" width="25" height="19" position="0 0 -20"></a-video> 
+        <a-video src="#vr_background" width="25" height="19" position="20 0 -20"></a-video>
+        <a-video src="#vr_background" width="25" height="19" position="-20 0 -20"></a-video> 
+        
+-->
+    
+
+
+              <!-- Red directional light shining from the top left. -->
+        <a-light color="red" position="-11 4 0"></a-light>
+        <a-light color="white" position="-12 10 13"></a-light>
+
+        <!-- Blue point light, 5 meters in the air. -->
+        <a-light type="point" color="blue" position="0 5 0"></a-light>    
+        
+             <!-- ENTITIES -->
+       <a-entity id="cameraRig">
+
+      <a-entity id="head" camera="active: true" look-controls wasd-controls position="1 3.6 0"></a-entity>
+      <a-entity oculus-touch-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity oculus-touch-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity vive-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity vive-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+
+       </a-entity>
+        
+      </a-scene>
+  </body>
+</html>
