@@ -34,7 +34,7 @@
       <a-assets>
           
         <img id="sky" src="images/starmap.jpg">      
-        <video id="vr_background" autoplay loop="true" src="video/mountain.mp4"></video> 
+<!--        <video id="vr_background" autoplay loop="true" src="video/mountain.mp4"></video> -->
           
         
        <!-- Level Three Assets -->    
@@ -54,7 +54,11 @@
 -->
       </a-assets>
 
-        
+        <a-entity position="0 1.8 10">
+        <a-camera>
+
+        <a-camera>
+        </a-entity>
            
         
    
@@ -65,8 +69,8 @@
 -->
          
       <a-sky src="#sky"></a-sky>
-      <a-video src="#levelThreeAds1" position="-.38 .77 -.9"></a-video>
-        <a-entity data-brackets-id="871" text-geometry="value: Congrats! You won!; font: https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json" position="-2.25 2.02 -1.18"></a-entity> 
+<!--      <a-video src="#levelThreeAds1" position="-.38 .77 -.9"></a-video>-->
+        <a-entity data-brackets-id="871" text-geometry="value: Congrats! You beat the ads!; font: https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json" position="-2.25 2.02 -1.18"></a-entity> 
         <a-entity position="0 2.25 -15" particle-system="color:#000, #FFF;duration:NaN"></a-entity>
         <a-entity camera="" wasd-controls="" position="0 1.6 0" rotation="-7.792226013779197 -0.9167324722093172 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
         <a-entity position="0 2.25 -15" particle-system="color:#03e3fc, #fcad03;duration:NaN"></a-entity>
@@ -81,7 +85,7 @@
              <!-- ENTITIES -->
        <a-entity id="cameraRig">
 
-      <a-entity id="head" camera="active: true" look-controls wasd-controls position="1 3.6 0"></a-entity>
+      <a-entity id="head" camera="active: true" look-controls wasd-controls position="1 3.6 20"></a-entity>
       <a-entity oculus-touch-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       <a-entity oculus-touch-controls="hand: right" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       <a-entity vive-controls="hand: left" teleport-controls="button: trigger; cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>

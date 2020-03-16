@@ -22,12 +22,22 @@
       
     <!-- teleport library -->  
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    
+     <!-- A-Frame HREF component library -->
+    <script src="a-frame-href.js"></script>  
+    <script src="link-controls.js"></script>
+    <script src="js/aframe-hyperlink.js"></script>
+    
+      
+      
       
   </head>
   <body>
-    <a-scene loading-screen="dotsColor: teal; backgroundColor: black" physics>
+    <a-scene loading-screen="dotsColor: teal; backgroundColor: black" physics cursor="rayOrigin: mouse">
         <!-- ASSETS -->
       <a-assets>
+          
+          
           
         <img id="sky" src="images/starmap.jpg">      
         <video id="vr_background" autoplay loop="true" src="video/mountain.mp4"></video> 
@@ -51,22 +61,59 @@
         <img id="levelTwoad13" src="images/levelTwoAds13.jpg"> 
         <img id="levelTwoad14" src="images/levelTwoAds14.jpg">
         <img id="levelTwoad15" src="images/levelTwoAds15.jpg">
-        <img id="levelTwoad15" src="images/levelTwoAds16.jpg">
-        <img id="levelTwoad15" src="images/levelTwoAds17.jpg">
-        <img id="levelTwoad15" src="images/levelTwoAds18.jpg">
-        <img id="levelTwoad15" src="images/levelTwoAds19.jpg">
+        <img id="levelTwoad16" src="images/levelTwoAds16.jpg">
+        <img id="levelTwoad17" src="images/levelTwoAds17.jpg">
+        <img id="levelTwoad18" src="images/levelTwoAds18.jpg">
+        <img id="levelTwoad19" src="images/levelTwoAds19.jpg">
         <img id="levelTwoReal" src="images/levelTwoRealAd.jpg"> 
           
         <a-entity link="href: thirdLevel.html; title:My Home; image: #levelTwoReal"></a-entity>
       
           
-      </a-assets>
-
+      </a-assets> 
         
            
+    
+       <a-image data-brackets-id="458" src="#levelTwoad1" material="" geometry="" position="0.08 0.51347 -8.70523"></a-image>
+       <a-image data-brackets-id="459" src="#levelTwoad2" material="" geometry="" rotation="90 0 0" position="0.084 0 -8.42507"></a-image>
+       <a-image data-brackets-id="460" src="#levelTwoad3" material="" geometry="" rotation="0 90 0" position="-0.426 0.49178 -8.3562"></a-image>   <a-image data-brackets-id="462" src="#levelTwoad5" material="" geometry="" rotation="0 90 0" position="0.589 0.46689 -8.51773"></a-image> 
+       <a-image data-brackets-id="463" src="#levelTwoad6" material="" geometry="" position="0.081 0.49618 -8.04487"></a-image>
+       <a-image data-brackets-id="464" src="#levelTwoad7" material="" geometry="" rotation="90 0 90" position="0.075 1.0149 -8.2768"></a-image>
+       <a-image data-brackets-id="466" src="#levelTwoad9" material="" geometry="" rotation="90 0 0" position="-0.938 0.02284 -8.6367"></a-image>
+       <a-image data-brackets-id="467" src="#levelTwoad10" material="" geometry="" rotation="0 90 0" position="-1.385 0.47033 -8.69682"></a-image>
+       <a-image data-brackets-id="468" src="#levelTwoad11" material="" geometry="" position="-0.90762 0.50495 -8.17089"></a-image>
+       <a-image data-brackets-id="469" src="#levelTwoad12" material="" geometry="" rotation="90 0 0" position="-0.875 1.00304 -8.39881"></a-image>  <a-image data-brackets-id="470" src="#levelTwoad13" material="" geometry="" rotation="90 0 0" position="1.067 0.037 -8.27129"></a-image>  
+        <a-image data-brackets-id="471" src="#levelTwoad14" material="" geometry="" rotation="0 90 0" position="1.557 0.55408 -8.18135"></a-image>
+        <a-image data-brackets-id="472" src="#levelTwoad15" material="" geometry="" position="1.097 0.50209 -8.87863"></a-image>
+        <a-image data-brackets-id="473" src="#levelTwoad16" material="" geometry="" rotation="90 0 0" position="1.05699 1.02872 -8.18094"></a-image>
+        <a-image data-brackets-id="474" src="#levelTwoad17" material="" geometry="" position="1.049 0.55562 -7.61627"></a-image>
+        <a-image data-brackets-id="459" src="#levelTwoad2" material="" geometry="" rotation="90 0 0" position="0.084 0.01704 -7.46828"></a-image>
+        <a-image data-brackets-id="476" src="#levelTwoad19" material="" geometry="" rotation="0 90 0" position="-0.42 0.51 -7.54285"></a-image>
+<!--        <a-image data-brackets-id="477" src="#levelTwoReal" material="" geometry="" rotation="0 90 0" position="-1.421 0.49 -7.76453"></a-image>-->
+        <a-image data-brackets-id="756" src="#levelTwoad8" material="" geometry="" rotation="0 90 0" position="1.6 0.39 -7.89228"></a-image>    
+        <a-image data-brackets-id="561" src="#levelTwoad1" material="" geometry="" position="-0.90585 0.51271 -7.23002"></a-image>
+        <a-image data-brackets-id="563" src="#levelTwoad3" material="" geometry="" rotation="90 0 0" position="-0.89837 0.017 -6.7215"></a-image>
+        <a-image data-brackets-id="564" src="#levelTwoad4" material="" geometry="" position="-0.9014 0.504 -6.21352"></a-image>
+        <a-image data-brackets-id="585" src="#levelTwoad6" material="" geometry="" position="-0.409 0.49618 -6.77487" rotation="0 90 90"></a-image>
+        <a-image data-brackets-id="698" src="#levelTwoad5" material="" geometry="" rotation="90.05 0 0" position="-0.87132 1.01404 -6.6487"></a-image>
+        <a-image data-brackets-id="681" src="#levelTwoad8" material="" geometry="" position="-0.937 0.0626 -7.64442" rotation="90 0 0"></a-image>
+        <a-image data-brackets-id="749" src="#levelTwoad1" material="" geometry="" rotation="90 0 0" position="-0.891 1.03767 -7.5176"></a-image>
+        <a-image data-brackets-id="750" src="#levelTwoad2" material="" geometry="" rotation="90 0 90" position="1.04398 0.043 -7.17167"></a-image>
+        <a-image data-brackets-id="751" src="#levelTwoad3" material="" geometry="" rotation="90 0 0" position="0.10748 0 -6.6979"></a-image>
+        <a-image data-brackets-id="752" src="#levelTwoad4" material="" geometry="" rotation="90 0 0" position="1.0496 0.03 -6.6937"></a-image>
+        <a-image data-brackets-id="753" src="#levelTwoad5" material="" geometry="" position="0.096 0.52091 -6.97145"></a-image>
+        <a-image data-brackets-id="754" src="#levelTwoad6" material="" geometry="" position="0.075 0.52844 -6.1999"></a-image>
+        <a-image data-brackets-id="755" src="#levelTwoad7" material="" geometry="" rotation="90 0 0" position="0.13 1.056 -6.65217"></a-image>
         
-   
-      
+        <a-image data-brackets-id="757" src="#levelTwoad9" material="" geometry="" position="1.032 0.52754 -7.02709"></a-image>
+        <a-entity id="mainImg"
+          geometry="primitive: plane; width: 1; height: 1;"
+          material="src: #levelTwoReal;"
+          position="-0.90 0.49 -7.76453;"
+          href="thirdLevel.html"
+          >
+      </a-entity>
+            <a-image data-brackets-id="756" src="#levelTwoad8" material="" geometry="" rotation="0 90 0" position="1.55 0.50277 -7.66228"></a-image>
 <!--
       <a-videosphere src="#vr_background"></a-videosphere>
       <a-videosphere src="video/VR_Background.mp4"></a-videosphere>
