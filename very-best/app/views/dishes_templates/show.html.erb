@@ -1,0 +1,86 @@
+
+ <div class="container mt-4">
+    <div class="row mt-2 justify-content-md-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">
+          You loved the <%= @dish.name %> at...
+
+            <div class="badge badge-primary float-right">
+              <% if @dish.cuisine.present? %>
+                <%= @dish.cuisine.name %>
+              <% end %>
+            </div>
+        </h4>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <form action="/create_bookmark" class="form-inline float-left" method="post">
+            <!-- Hidden input for authenticity token to protect from forgery -->
+            <input name="authenticity_token" type="hidden" value="WdW00+4R7G4UNAfAaFe2Pl1ssj93VbTqk9K/xsIEw4sZHr7am+E4QQ4Bze9mJHg6r5gHuu7+GObEi2Fdsz1uDw==">
+
+
+            <input type="hidden" name="dish_id" value="<%= @dish.id %>">
+            <input type="hidden" name="user_id" value="<%= current_user.id %>">
+            <input type="hidden" name="notes" value="">
+
+            <!-- Label and input for venue_id -->
+            <div class="form-group mr-sm-1">
+              <label class="control-label sr-only">
+                Venue
+              </label>
+
+            <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name), :class => "form-control") %>
+            </div>
+
+            <button class="btn btn-primary btn">
+              <i class="fa fa-heart"></i>
+            </button>
+          </form>
+          <small class="float-right text-muted">
+            right now
+          </small>
+        </li>
+        
+        
+            
+              <% @bookmarks.each do |bookmark| %>
+              <% if current_user.id == bookmark.user_id %>
+              <% if bookmark.dish_id == @dish.id %>
+              <li class="list-group-item">
+                <p>
+                  <a href="/venues/<%= bookmark.venue_id %>">
+                   <%= Venue.find(bookmark.venue_id).name %>
+                  </a>
+                </p>
+              
+               <small class="float-right text-muted">
+                <a href="/bookmarks/11123/edit">
+                  <i class="fa fa-fw fa-edit"></i>
+                </a>
+
+                <a href="/delete_bookmark/11123">
+                  <i class="fa fa-fw fa-trash-o"></i>
+                </a>
+              </small>
+              
+              <% else %>
+              <% end %>
+              <% else %>
+              <% end %>
+             <% end %>
+          </li>
+      </ul>
+
+      <div class="card-footer text-center">
+        <a href="/dishes" class="btn btn-block btn-secondary">
+          <i class="fa fa-chevron-left"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>

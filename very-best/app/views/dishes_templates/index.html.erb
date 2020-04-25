@@ -1,0 +1,106 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-3">
+      <%= search_form_for @q, :class => "collapse", :id => "dishes_filters" do |f| %>
+      <p class="lead">Narrow results:</p>
+        <div class="form-group">
+          <%= f.label :name_cont, "Name contains" %>
+          <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :q_cuisine_id_eq_any, "Cuisine" %>
+          <% @cuisines.each do |cuisine| %>
+          <%#= f.check_box :name_cont, :class => "form-control", :placeholder => cuisine.name %>
+          <%#= f.label :name_cont, cuisine.name %>
+          
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="<%= cuisine.id %>">
+            <%= cuisine.name %>            
+          </label>  
+        </div>
+          
+          <% end %>
+        </div>
+      
+      <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+      <a href="/dishes" class="btn btn-secondary btn-block mb-1">
+        Clear filters
+      </a>
+      
+      <% end %>
+      
+      <a class="btn btn-secondary btn-block mb-1" data-toggle="collapse" href="#dishes_filters">
+        Show Filters
+      </a>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="card">
+        <table class="table table-striped table-hover">
+          <tr>
+            <th>The very best ...</th>
+            <th>is at...</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <% @dishes.each do |dish| %>
+          <% @bookmarked_user_dishes = Bookmark.where(:dish_id => dish.id, :user_id => current_user) %>
+            <% if @bookmarked_user_dishes.first.present? %>
+              <td>
+                <a href="/dishes/<%= dish.id %>"><%= dish.name %></a>
+              </td>
+              <td>
+                <a href="/venues/<%= @bookmarked_user_dishes.first.venue_id %>"><%= Venue.find(@bookmarked_user_dishes.first.venue_id).name %></a>
+              </td>
+              <% else %>
+            <tr>
+              <td> <!-- Dish Name --> 
+                <a href="/dishes/<%= dish.id %>"><%= dish.name %></a>
+              </td>
+              <td>
+                 <form action="/create_bookmark" class="form-inline float-left" method="post">
+              
+                    <!-- Label and input for dish_id -->
+                    <div class="form-group">
+                     <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1">
+                      <option>
+                        Choose a venue...
+                      </option>
+                      <option value= <%= select_tag("venue_id", options_from_collection_for_select(Venue.all, :id, :name, @dishes.try(:venue_id)), :class => "form-control") %> 
+                     <input type="hidden" name="dish_id" value="<%= dish.id %>">
+              
+                    <!-- Label and input for user_id -->
+                    <input type="hidden" name="user_id" value="<%= current_user.id %>">
+              
+                    <!-- Label and input for notes -->
+                    <input type="hidden" name="notes" value="">
+              
+                    <button class="btn btn-primary btn">
+                      <i class="fa fa-heart"></i>
+                    </button>
+                    </div>
+              </form>
+              <% end %>
+                <td>
+                 <% if dish.cuisine.present? %>
+                  <span class="badge badge-primary">
+                    <%= dish.cuisine.name %>
+                  </span>
+                <% end %>
+              </td>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      <div class="card-footer text-center"></div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <a href="/venues/new" class="btn btn-secondary btn-block mb-1 btn-success">Add a new venue</a>
+    </div>
+    
+  </div>
+</div>
